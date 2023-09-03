@@ -1,0 +1,52 @@
+@import "src/styling/modal-styles";
+
+.product-name{
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.product-description{
+  font-weight: 100;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.product-price{
+
+}
+
+.is-invalid{
+  color: red;
+  input{
+    color: red;
+  }
+}
+
+.helper{
+  display: block;
+}
+
+.calculated-price{
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.product-overview{
+  @include flexbox;
+  @include justify-content(space-between);
+  .product-start{
+    width: 68%;
+  }
+  .product-end{
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+
+    width: 30%;
+    app-product-image{
+      max-width: 120px;
+      max-height: 120px;
+    }
+  }
+}

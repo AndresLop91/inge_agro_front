@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import "styling/modal-styles";
+@import "styling/font-family";
+
+.cdk-overlay-container{
+  padding-top: 20px;
+  margin-top: 0;
+  @include flexbox;
+  @include justify-content(flex-end);
+}
+
+*{
+  font-size: 13px;
+}

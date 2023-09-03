@@ -1,0 +1,30 @@
+.space-between{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.logo{
+  img{
+    width: 35px;
+    height: 35px;
+  }
+}
+
+
+.cart-icon{
+  max-width: 40px;
+  max-height: 40px;
+  margin-left: 10px;
+
+  *{
+    fill: white;
+  }
+
+  &:hover{
+    cursor: pointer;
+    *{
+      fill: #cc7c2a;
+    }
+  }
+}
