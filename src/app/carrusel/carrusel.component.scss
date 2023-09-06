@@ -1,0 +1,39 @@
+#carouselExampleCaptions {
+    // Estilo general del carrusel
+    background-color: #f0f0f0; // Cambia el color de fondo según tus preferencias
+    // Otros estilos de diseño, como márgenes, relleno, etc.
+}
+
+.carousel-indicators {
+    // Estilo de los indicadores del carrusel
+    button {
+        background-color: green; // Cambia el color de los indicadores
+        &.active {
+            background-color: darkgreen; // Cambia el color del indicador activo
+        }
+    }
+}
+
+.carousel-inner {
+    // Estilo del contenido del carrusel
+    .carousel-item {
+        // Estilo de cada diapositiva
+        img {
+            // Estilo de las imágenes
+            border: 1px solid green; // Cambia el borde de las imágenes
+        }
+        .carousel-caption {
+            // Estilo de la leyenda de cada diapositiva
+            background-color: rgba(0, 128, 0, 0.7); // Cambia el color de fondo de la leyenda
+            color: white; // Cambia el color del texto de la leyenda
+            // Otros estilos de diseño para la leyenda
+        }
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    // Estilo de los botones de control
+    background-color: green; // Cambia el color de fondo de los botones de control
+    // Otros estilos de diseño para los botones de control
+}
