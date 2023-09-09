@@ -1,0 +1,17 @@
+<div  class="container-fluid">
+  <ngb-carousel *ngIf="products">
+    <ng-container *ngFor="let p of products; let i = index">
+      <ng-template ngbSlide>
+        <div class="wrapper" >
+          <app-product-image [productType]="p?.productType"></app-product-image>
+        </div>
+        <div class="carousel-caption">
+          {{p.description}}
+          <div>
+            <a class="btn add-to-cart" (click)="showAddToCartModal(p?.id)">Agregar al carrito</a>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+  </ngb-carousel>
+</div>

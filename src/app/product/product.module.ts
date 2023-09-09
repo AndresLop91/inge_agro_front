@@ -6,13 +6,15 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import { ProductImageComponent } from './product-image/product-image.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
-  declarations: [AddProductComponent, MyProductsComponent, ProductListComponent, ProductImageComponent, EditProductComponent],
+  declarations: [AddProductComponent, MyProductsComponent, ProductListComponent, ProductImageComponent, EditProductComponent, ProductCarouselComponent],
   exports: [
     ProductImageComponent
   ],
-  imports: [ReactiveFormsModule, CommonModule]
+  imports: [ReactiveFormsModule, CommonModule, NgbModule]
 })
 export class ProductModule{
 

@@ -18,6 +18,7 @@ export class ProductService {
   private getAllProductsUrl : string = `${environment.apiURL}/product/findAll`;
   private getProductByIdUrl: string = `${environment.apiURL}/product/findById`;
   private removeProductByIdUrl: string = `${environment.apiURL}/product/remove`;
+  private getFirstFiveProductsUrl : string = `${environment.apiURL}/api/OfferProduct/first5`;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -46,7 +47,11 @@ export class ProductService {
   }
 
   public removeProduct(productId: number) : Observable<Product> {
-    return  this.httpClient.post(this.removeProductByIdUrl, {productId});
+    return this.httpClient.post(this.removeProductByIdUrl, {productId});
+  }
+
+  public getFirstFiveProducts() :Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.getFirstFiveProductsUrl);
   }
 
 }
