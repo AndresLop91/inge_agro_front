@@ -5,3 +5,18 @@
   background-color: $brand-color;
   color: $white;
 }
+
+.container-fluid{
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ngb-carousel{
+    display: block;
+    width: 70%;
+  }
+
+  margin-bottom: 50px;
+}
