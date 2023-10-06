@@ -14,6 +14,7 @@ import { ProductModule } from "./product/product.module";
 import { NotFoundComponent } from './http/not-found/not-found.component';
 import {CartModule} from "./cart/cart.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {AgmCoreModule} from "@agm/core";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AuthModule,
     ProductModule,
     CartModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCzaY6N4JDmVHHMLVCQ-UDCzS5EAKO6Quw',
+      libraries: ['places']
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

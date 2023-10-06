@@ -11,19 +11,21 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ForbiddenComponent } from './components/forbidden/forbidden.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import {AgmCoreModule} from "@agm/core";
 
 @NgModule({
   exports: [
     HeaderComponent,
     FooterComponent
   ],
-    imports: [
-        CommonModule,
-        RouterModule,
-        CartModule,
-        OverlayModule,
-        BrowserAnimationsModule
-    ],
+  imports: [
+    CommonModule,
+    RouterModule,
+    CartModule,
+    OverlayModule,
+    BrowserAnimationsModule,
+    AgmCoreModule
+  ],
   declarations: [
     FooterComponent,
     HeaderComponent,

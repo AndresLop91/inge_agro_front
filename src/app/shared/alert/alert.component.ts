@@ -14,7 +14,7 @@ export class AlertComponent implements OnInit, OnDestroy {
 
   animationState: AlertAnimationState = 'default';
   iconType?: string;
-  private intervalId?: number;
+  private intervalId?: any;
 
   constructor(
     readonly data: AlertData,

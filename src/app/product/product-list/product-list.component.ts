@@ -13,6 +13,10 @@ import {AddToCartComponent} from "../../cart/components/modal/add-to-cart/add-to
 })
 export class ProductListComponent implements OnInit, OnDestroy {
 
+  lat = 6.219040;
+
+  long = -75.332369;
+
   closeResult: string | undefined;
   products: Product[] | undefined;
   pSubscription : Subscription | undefined;
@@ -31,6 +35,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
         this.alertService.showDanger('ocurrio un problema trayendo todos los productos');
       }
     });
+  }
+
+  onMapClick(event: any) {
+    alert(event);
   }
 
   isThereProducts(): boolean{
