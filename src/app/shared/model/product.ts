@@ -9,6 +9,8 @@ export interface Product{
   quantityType?: QuantityType;
   description?: string;
   productType?: ProductType;
+  lat?: number;
+  lng?: number;
 }
 
 export interface ProductForm {

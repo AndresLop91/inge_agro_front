@@ -5,6 +5,8 @@ export interface User{
   username?: String;
   password?: String;
   person?: Person;
+  lng?: number;
+  lat?: number;
 }
 
 

@@ -17,6 +17,13 @@
       <div class="card-body">
         <div class="product-name">{{p?.productType?.name}}</div>
         <div class="product-description">{{p?.description}}</div>
+
+        <div class="map-detail">
+          <agm-map [latitude]='getCoordinateOrZero(p?.lat)' [longitude]='getCoordinateOrZero(p?.lng)' [zoom]="15">
+            <agm-marker [latitude]="getCoordinateOrZero(p?.lat)" [longitude]="getCoordinateOrZero(p?.lng)"></agm-marker>
+          </agm-map>
+        </div>
+
         <hr>
         <div>
           <span class="product-price">{{getPriceByQtyType(p) | currency:'COP'}}</span>

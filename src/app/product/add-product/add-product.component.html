@@ -35,6 +35,15 @@
     </textarea>
     </div>
 
+    <div class="form-group map">
+
+      <h3>Agrega la ubicación de tu finca: </h3>
+
+      <agm-map [latitude]='lat' [longitude]='long' [zoom]="15" (mapClick)="onMapClick($event)">
+        <agm-marker *ngIf="lat !== 0" [latitude]="lat" [longitude]="long"></agm-marker>
+      </agm-map>
+    </div>
+
     <div class="centered">
         <button type="button" class="app-btn" (click)="onSubmit()">Agregar producto</button>
     </div>

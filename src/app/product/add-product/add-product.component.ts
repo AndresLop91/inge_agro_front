@@ -17,6 +17,11 @@ import {AlertService} from "../../shared/services/alert/alert.service";
 })
 export class AddProductComponent implements OnInit, OnDestroy {
 
+  lat = 6.219040;
+  long = -75.332369;
+
+  locationChanged = false;
+
   public submitted = false;
   public productForm: FormGroup;
 
@@ -93,7 +98,9 @@ export class AddProductComponent implements OnInit, OnDestroy {
       stock: this.stock,
       quantityType: this.quantityType,
       price: this.f.price.value,
-      description: this.f.description.value
+      description: this.f.description.value,
+      lat: this.lat,
+      lng: this.long
     }
   }
 
@@ -115,6 +122,12 @@ export class AddProductComponent implements OnInit, OnDestroy {
       remainingQuantity: this.f.stock.value,
       soldQuantity: 0
     }
+  }
+
+  onMapClick(event: any) {
+    this.locationChanged = true;
+    this.lat = event.coords.lat;
+    this.long = event.coords.lng;
   }
 
   ngOnInit(): void {

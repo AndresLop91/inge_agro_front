@@ -19,6 +19,11 @@ import {AlertService} from "../../../shared/services/alert/alert.service";
 })
 export class RegisterComponent implements OnInit, OnDestroy {
 
+  lat = 6.219040;
+  long = -75.332369;
+
+  locationChanged = false;
+
   justNumbersPattern = "^[0-9]*$"
   maxLengthIdentificationNumber = 10;
   minLengthIdentificationNumber = 10;
@@ -61,13 +66,18 @@ export class RegisterComponent implements OnInit, OnDestroy {
         Validators.maxLength(this.maxLengthIdentificationNumber),
         Validators.minLength(this.minLengthIdentificationNumber)]],
       identificationType: ['', Validators.required],
-      gender: ['', Validators.required],
+      gender: ['', Validators.required]
     });
   }
 
   onSubmit(): void {
     this.submitted = true;
     if (this.registerForm.invalid) {
+      this.alertService.showWarning('Complete el formulario');
+      return;
+    }
+    if(!this.locationChanged){
+      this.alertService.showWarning('Seleccione una ubicación en el mapa');
       return;
     }
     this.createGenderFromForm();
@@ -93,7 +103,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.user = {
       username: this.f.username.value,
       password: this.f.password.value,
-      person: this.person
+      person: this.person,
+      lat: this.lat,
+      lng: this.long
     }
   }
 
@@ -154,6 +166,12 @@ export class RegisterComponent implements OnInit, OnDestroy {
         this.alertService.showDanger('No se pudieron cargar los tipos de identificación');
       }
     })
+  }
+
+  onMapClick(event: any) {
+    this.locationChanged = true;
+    this.lat = event.coords.lat;
+    this.long = event.coords.lng;
   }
 
   ngOnDestroy(): void {

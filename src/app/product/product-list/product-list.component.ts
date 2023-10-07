@@ -41,6 +41,14 @@ export class ProductListComponent implements OnInit, OnDestroy {
     alert(event);
   }
 
+  getCoordinateOrZero(coordinate: number | undefined)  : number {
+    if(coordinate != undefined){
+      return coordinate;
+    }
+    return 0;
+  }
+
+
   isThereProducts(): boolean{
     if(this.products && this.products.length){
         return this.products?.length > 0;
