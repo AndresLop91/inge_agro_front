@@ -15,6 +15,7 @@ import { NotFoundComponent } from './http/not-found/not-found.component';
 import {CartModule} from "./cart/cart.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AgmCoreModule} from "@agm/core";
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {AgmCoreModule} from "@agm/core";
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     NgbModule,
     UserModule,

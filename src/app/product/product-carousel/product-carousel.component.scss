@@ -1,22 +1,39 @@
 @import "../../../styling/color-variables";
-
-.add-to-cart{
-  margin-top: 15px;
-  background-color: $brand-color;
-  color: $white;
+.add-to-cart {
+    margin-top: 15px;
+    background-color: $brand-color;
+    color: $white;
 }
 
-.container-fluid{
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.container-fluid {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ngb-carousel {
+        display: block;
+        width: 70%;
+    }
+    margin-bottom: 50px;
+}
 
-  ngb-carousel{
-    display: block;
-    width: 70%;
-  }
+.font-size-custom {
+    font-size: 35px;
+}
 
-  margin-bottom: 50px;
+.gradient-bg {
+    display: inline-block;
+    background: linear-gradient(to right, #a19f9f, #c68438);
+    /* Ajusta los colores según tu preferencia */
+    padding: 5px;
+    /* Puedes ajustar esto según el espacio que desees alrededor del contenido */
+    border-radius: 5px;
+    /* Puedes ajustar esto para redondear las esquinas si lo deseas */
+    color: white;
+    /* Ajusta el color del texto para que sea legible en el fondo degradado */
+}
+
+.font-size-custom-description {
+    font-size: 25px;
 }

@@ -7,5 +7,6 @@ export interface Person{
   bornDate?: Date;
   identificationNumber?: String;
   identificationType?: IdentificationType;
+  phoneNumber?: string;
   gender?: Gender;
 }

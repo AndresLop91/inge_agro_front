@@ -62,6 +62,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
     }
     return 0;
   }
+  
 
   showAddToCartModal(productId: number | undefined): void {
     let modalRef: NgbModalRef;

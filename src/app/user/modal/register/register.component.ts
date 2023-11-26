@@ -28,6 +28,10 @@ export class RegisterComponent implements OnInit, OnDestroy {
   maxLengthIdentificationNumber = 10;
   minLengthIdentificationNumber = 10;
 
+  justPhoneNumbersPattern = "^[0-9]*$"
+  maxLengthPhoneNumber = 10;
+  minLengthPhoneNumber = 10;
+
   // Create the JSON registration
   person : Person | undefined;
   user : User | undefined;
@@ -66,7 +70,12 @@ export class RegisterComponent implements OnInit, OnDestroy {
         Validators.maxLength(this.maxLengthIdentificationNumber),
         Validators.minLength(this.minLengthIdentificationNumber)]],
       identificationType: ['', Validators.required],
-      gender: ['', Validators.required]
+      gender: ['', Validators.required],
+      phoneNumber: ['', [
+        Validators.required,
+        Validators.pattern(this.justPhoneNumbersPattern),
+        Validators.maxLength(this.maxLengthPhoneNumber ),
+        Validators.minLength(this.minLengthPhoneNumber)]],
     });
   }
 
@@ -84,6 +93,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.createIdentificationTypeFromForm();
     this.createPersonFromForm();
     this.createUserFromForm();
+
     this.saveUser();
   }
 
@@ -119,6 +129,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
       bornDate: date,
       identificationNumber: this.f.identificationNumber.value,
       gender: this.gender,
+      phoneNumber: this.f.phoneNumber.value,
       identificationType: this.identificationType,
     }
   }

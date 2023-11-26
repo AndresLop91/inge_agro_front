@@ -1,92 +1,89 @@
 <div class="modal-header">
-  <h4 class="modal-title">Registro de Usuario</h4>
-  <button type="button" class="modal-close" aria-label="Close" (click)="closeModal('Botón cerrar')">
+    <h4 class="modal-title">Registro de Usuario</h4>
+    <button type="button" class="modal-close" aria-label="Close" (click)="closeModal('Botón cerrar')">
   </button>
 </div>
 <div class="modal-body">
-  <h5 class="message">Registro de Usuario</h5>
+    <h5 class="message">Registro de Usuario</h5>
 
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="login-form">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="login-form">
 
-    <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
-      <label for="firstName">Nombres</label>
-      <input type="text" class="form-control" formControlName="firstName"
-             id="firstName" aria-describedby="firstNameHelp" placeholder="Escribe tu nombre">
-      <small id="firstNameHelp" class="helper form-text text-muted">Escribe tu nombre o nombres</small>
-    </div>
+        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+            <label for="firstName">Nombres</label>
+            <input type="text" class="form-control" formControlName="firstName" id="firstName" aria-describedby="firstNameHelp" placeholder="Escribe tu nombre">
+            <small id="firstNameHelp" class="helper form-text text-muted">Escribe tu nombre o nombres</small>
+        </div>
 
-    <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
-      <label for="lastName">Apellidos</label>
-      <input type="text" class="form-control" formControlName="lastName"
-             id="lastName"  placeholder="Escribe tus apellidos">
-    </div>
+        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+            <label for="lastName">Apellidos</label>
+            <input type="text" class="form-control" formControlName="lastName" id="lastName" placeholder="Escribe tus apellidos">
+        </div>
 
-    <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.bornDate.errors }">
-      <label for="bornDate">Fecha de Nacimiento</label>
-      <input type="date" ngbDatepicker class="form-control" formControlName="bornDate"
-             id="bornDate"  placeholder="Fecha">
-    </div>
+        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.bornDate.errors }">
+            <label for="bornDate">Fecha de Nacimiento</label>
+            <input type="date" ngbDatepicker class="form-control" formControlName="bornDate" id="bornDate" placeholder="Fecha">
+        </div>
 
-    <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.identificationType.errors }">
-      <label for="identificationType">Tipo de identifiaci&oacute;n</label>
-      <select class="form-control" id="identificationType" formControlName="identificationType">
+        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.identificationType.errors }">
+            <label for="identificationType">Tipo de identifiaci&oacute;n</label>
+            <select class="form-control" id="identificationType" formControlName="identificationType">
         <option disabled selected value> -- selecciona una opci&oacute;n -- </option>
         <option *ngFor='let it of identificationTypes ; let i = index' [value]="it.id">{{it.identificationType}}</option>
       </select>
-    </div>
+        </div>
 
-    <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.identificationNumber.errors }">
-      <label for="identificationNumber">N&uacute;mero de identificaci&oacute;n</label>
-      <input type="text" class="form-control" formControlName="identificationNumber"
-             id="identificationNumber"  placeholder="Número de identificaci&oacute;n"
-             [minlength]="minLengthIdentificationNumber"
-             [maxlength]="maxLengthIdentificationNumber">
-      <small id="identificationNumberHelp" class="helper form-text text-muted">Solo 10 d&iacute;gitos</small>
-    </div>
+        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.identificationNumber.errors }">
+            <label for="identificationNumber">N&uacute;mero de identificaci&oacute;n</label>
+            <input type="text" class="form-control" formControlName="identificationNumber" id="identificationNumber" placeholder="Número de identificaci&oacute;n" [minlength]="minLengthIdentificationNumber" [maxlength]="maxLengthIdentificationNumber">
+            <small id="identificationNumberHelp" class="helper form-text text-muted">Solo 10 d&iacute;gitos</small>
+        </div>
 
-    <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
-      <label for="gender">G&eacute;nero</label>
-      <select class="form-control" id="gender" formControlName="gender">
+        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
+            <label for="gender">G&eacute;nero</label>
+            <select class="form-control" id="gender" formControlName="gender">
         <option disabled selected value> -- selecciona una opci&oacute;n -- </option>
         <option *ngFor='let g of genders ; let i = index' [value]="g.id">{{g.genderName}}</option>
       </select>
-    </div>
+        </div>
 
-    <hr>
+        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }">
+            <label for="phoneNumber">Número de celular</label>
+            <input type="text" class="form-control" formControlName="phoneNumber" id="phoneNumber" placeholder="Número de celular" pattern="[0-9]*" [minlength]="minLengthPhoneNumber" [maxlength]="maxLengthPhoneNumber">
+            <small id="phoneNumberHelp" class="helper form-text text-muted">Solo 10 dígitos</small>
+        </div>
 
-    <div class="">
-      <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
-        <label for="username">Usuario</label>
-        <input type="text" class="form-control" formControlName="username"
-               id="username" aria-describedby="username" placeholder="Escribe tu nombre de usuario">
-      </div>
+        <hr>
 
-      <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
-        <label for="password">Contrase&ntilde;a</label>
-        <input type="password" class="form-control" formControlName="password"
-               id="password" aria-describedby="password" placeholder="Escribe tu contrase&ntilde;a">
-      </div>
+        <div class="">
+            <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                <label for="username">Usuario</label>
+                <input type="text" class="form-control" formControlName="username" id="username" aria-describedby="username" placeholder="Escribe tu nombre de usuario">
+            </div>
 
-      <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.passwordConfirmation.errors }">
-        <label for="passwordConfirmation">Contrase&ntilde;a</label>
-        <input type="password" class="form-control" formControlName="passwordConfirmation"
-               id="passwordConfirmation" aria-describedby="passwordConfirmation" placeholder="Repite tu contrase&ntilde;a">
-      </div>
-    </div>
+            <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                <label for="password">Contrase&ntilde;a</label>
+                <input type="password" class="form-control" formControlName="password" id="password" aria-describedby="password" placeholder="Escribe tu contrase&ntilde;a">
+            </div>
 
-    <div class="map">
+            <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.passwordConfirmation.errors }">
+                <label for="passwordConfirmation">Contrase&ntilde;a</label>
+                <input type="password" class="form-control" formControlName="passwordConfirmation" id="passwordConfirmation" aria-describedby="passwordConfirmation" placeholder="Repite tu contrase&ntilde;a">
+            </div>
+        </div>
 
-      <h3>Agrega la ubicación de tu finca: </h3>
+        <div class="map">
 
-      <agm-map [latitude]='lat' [longitude]='long' [zoom]="15" (mapClick)="onMapClick($event)">
-        <agm-marker *ngIf="lat !== 0" [latitude]="lat" [longitude]="long"></agm-marker>
-      </agm-map>
-    </div>
+            <h3>Agrega la ubicación de tu finca: </h3>
 
-  </form>
+            <agm-map [latitude]='lat' [longitude]='long' [zoom]="15" (mapClick)="onMapClick($event)">
+                <agm-marker *ngIf="lat !== 0" [latitude]="lat" [longitude]="long"></agm-marker>
+            </agm-map>
+        </div>
+
+    </form>
 
 </div>
 <div class="modal-footer">
-  <button type="button" class="app-btn cancel" (click)="closeModal('click en cerrar')">Cancelar</button>
-  <button type="button" class="app-btn logout" (click)="onSubmit()">Aceptar</button>
+    <button type="button" class="app-btn cancel" (click)="closeModal('click en cerrar')">Cancelar</button>
+    <button type="button" class="app-btn logout" (click)="onSubmit()">Aceptar</button>
 </div>

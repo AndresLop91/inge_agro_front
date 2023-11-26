@@ -1,20 +1,20 @@
-<header class="p-3 bg-dark text-white">
-  <div class="container">
-    <div class="d-flex flex-wrap space-between">
+<header class="p-3 header-color text-white">
+    <div class="containe">
+        <div class="d-flex flex-wrap space-between">
 
-      <a class="logo d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        <img src="https://us.123rf.com/450wm/designeran/designeran1605/designeran160500118/56622411-logotipo-del-tractor-respetuoso-del-medio-ambiente-.jpg?ver=6" />
-      </a>
-      <app-menu></app-menu>
-      <button *ngIf="isLoggedIn" routerLink="/add-product" routerLinkActive="active">Agregar productos</button>
-      <button *ngIf="isLoggedIn" routerLink="/my-products" routerLinkActive="active">Mis productos</button>
-      <button *ngIf="isLoggedIn" routerLink="/list" routerLinkActive="active">Productos</button>
+            <a class="logo d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="https://us.123rf.com/450wm/designeran/designeran1605/designeran160500118/56622411-logotipo-del-tractor-respetuoso-del-medio-ambiente-.jpg?ver=6" />
+            </a>
+            <app-menu></app-menu>
+            <button *ngIf="isLoggedIn" routerLink="/add-product" routerLinkActive="active">Agregar productos</button>
+            <button *ngIf="isLoggedIn" routerLink="/my-products" routerLinkActive="active">Mis productos</button>
+            <button *ngIf="isLoggedIn" routerLink="/list" routerLinkActive="active">Productos</button>
 
-      <div class="text-end" *ngIf="!isLoggedIn">
-        <a type="button" (click)="openLoginForm()" class="btn btn-outline-light me-2">Entrar</a>
-        <a type="button" (click)="openRegisterForm()" class="btn btn-warning">Registrar</a>
+            <div class="text-end" *ngIf="!isLoggedIn">
+                <a type="button" (click)="openLoginForm()" class="btn btn-outline-light me-2">Entrar</a>
+                <a type="button" (click)="openRegisterForm()" class="btn btn-warning">Registrar</a>
 
-        <svg class="cart-icon" (click)="toggleCart()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+                <svg class="cart-icon" (click)="toggleCart()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
           <desc>Created with Fabric.js 1.7.22</desc>
           <defs>
           </defs>
@@ -26,13 +26,13 @@
           </g>
           </g>
         </svg>
-      </div>
+            </div>
 
-      <div class="text-end" *ngIf="isLoggedIn">
-        <a type="button" (click)="logout()" class="btn btn-warning">Cerrar sesi&oacute;n</a>
+            <div class="text-end" *ngIf="isLoggedIn">
+                <a type="button" (click)="logout()" class="btn btn-warning">Cerrar sesi&oacute;n</a>
 
 
-        <svg class="cart-icon" (click)="toggleCart()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+                <svg class="cart-icon" (click)="toggleCart()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
           <desc>Created with Fabric.js 1.7.22</desc>
                     <defs>
           </defs>
@@ -44,7 +44,7 @@
           </g>
           </g>
         </svg>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </header>
